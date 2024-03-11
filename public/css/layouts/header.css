@@ -3,8 +3,7 @@
 header {
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, padding 0.5s ease-in-out;
     width: 100%;
-    padding: 0px 30px;
-    padding-top: 4px;
+    padding: 8px 30px;
     background-color: transparent !important;
     transition: 0.5s ease-in-out;
     z-index: 99;
@@ -45,7 +44,6 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    max-width: 1500px;
     margin: auto;
   }
   
