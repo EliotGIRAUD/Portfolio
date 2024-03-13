@@ -854,6 +854,8 @@
   color: white;
   text-align: right;
   margin-bottom: 50px;
+  text-align: center !important;
+  text-decoration: none;
 }
 
 #veille .box-grid {
@@ -1080,6 +1082,18 @@ form button:hover {
   gap: 0.5em;
   color: var(--main-color);
   margin-top: 10px;
+}
+
+#contact .container-contact{
+  display: flex;
+  align-items: center;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+}
+
+#contact .container-contact i {
+  padding: 30px;
+  scale: 3;
 }
 
 @media screen and (max-width: 1000px) {
