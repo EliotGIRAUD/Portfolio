@@ -274,73 +274,73 @@
         <section id="veille">
             <div class="wrapper">
                 <article class="orgagalerie">
-                    <h2 id = "veille"></a><u>Veille Technologique</u> </h2>
+                    <h2 id = "veille">Veille Technologique</h2>
                     <br/><br/>
-                    <script language="javascript">
+                    <div class="box-grid">
+                        <script language="javascript">
+                
+                
+                
+                            var paquet_image_1 = new Array(4);
+                                paquet_image_1[0] = '<a href = "https://youtu.be/LvnjQQKj11M?si=kH8iujqe7UJ8R2nS"><img src="public/assets/micodetelechargement.webp" class="img"><br/><span>Le téléchargement illégal cache-il vraiment des virus ?</span></a>';
+                                paquet_image_1[1] = '<a href = "https://www.youtube.com/watch?v=H00UfldbbHg"><img src="public/assets/micodegpt.webp" class="img"><br/><span>On a reçu le hacker qui rend fou les pirates chinois</span></a>';
+                                paquet_image_1[2] = '<a href = "https://youtu.be/m0FLBbdvThY?si=uQtWLQEonm4ROxt1"><img src="public/assets/attaque.webp" class="img"><br/><span>Comment une grosse entreprise gère une cyber-attaque</span></a>';
+                                paquet_image_1[3] = "<a href='public/assets/VeilleEliot.pdf'><img src='public/assets/blackcat.jpg' class=\"img\"><br/><span>L'une de mes veilles étudier sur papier concernant une <span>cyber-attaque</span> (Black Cat X Oiltanking)</span></a>";
+
             
-            
-            
-                        var paquet_image_1 = new Array(3);
-                            paquet_image_1[0] = '<a href = "https://youtu.be/LvnjQQKj11M?si=kH8iujqe7UJ8R2nS"><img src="public/assets/micodetelechargement.webp" class="img" width="300" height="400"><br/><span>Le téléchargement illégal cache-il vraiment des virus ?</span></a>';
-                            paquet_image_1[1] = '<a href = "https://www.youtube.com/watch?v=H00UfldbbHg"><img src="public/assets/micodegpt.webp" class="img" width="300" height="400"><br/><span>On a reçu le hacker qui rend fou les pirates chinois</span></a>';
-                            paquet_image_1[2] = '<a href = "https://youtu.be/m0FLBbdvThY?si=uQtWLQEonm4ROxt1"><img src="public/assets/attaque.webp" class="img" width="300" height="400"><br/><span>Comment une grosse entreprise gère une cyber-attaque</span></a>';
-        
-                        var paquet_image_2 = new Array(3);
-                            paquet_image_2[0] = '<a href = "https://youtu.be/zDncgXTc_4E?si=GccIyJ9TAt7RpooC"><img src="public/assets/apple.webp" class="img" width="300" height="400"><br/><span>Le lycéen qui a rendu fou Apple</span></a>';
-                            paquet_image_2[1] = '<a href = "https://www.youtube.com/watch?v=pQCT2ZnpHfY"><img src="public/assets/ia.webp" class="img" width="300" height="400"><br/><span>Comment pirater un streamer grâce à son chat</span></a>';
-                            paquet_image_2[2] = '<a href = "https://www.youtube.com/watch?v=_OV1VqJl4uA&t=775s"><img src="public/assets/tel.webp" class="img" width="300" height="400"><br/><span>On a reçu l ingénieur qui a piraté une Tesla</span></a>';
-                    </script>
-                    
-                    
-                    
-                    <script language="javascript">
-                    
-                        console.log("Début du script");
-                        var paquet = sessionStorage.getItem("paquet");
-                        var paquetwrite;
-                        console.log("ancien paquet :" + paquet)
-                    
-                        if ((paquet == "paquet_image_2") || (paquet == null))
+                            var paquet_image_2 = new Array(4);
+                                paquet_image_2[0] = '<a href = "https://youtu.be/zDncgXTc_4E?si=GccIyJ9TAt7RpooC"><img src="public/assets/apple.webp" class="img"><br/><span>Le lycéen qui a rendu fou Apple</span></a>';
+                                paquet_image_2[1] = '<a href = "https://www.youtube.com/watch?v=pQCT2ZnpHfY"><img src="public/assets/ia.webp" class="img"><br/><span>Comment pirater un streamer grâce à son chat</span></a>';
+                                paquet_image_2[2] = '<a href = "https://www.youtube.com/watch?v=_OV1VqJl4uA&t=775s"><img src="public/assets/tel.webp" class="img" ><br/><span>On a reçu l ingénieur qui a piraté une Tesla</span></a>';
+                                paquet_image_2[3] = "<a href='public/assets/VeilleEliot.pdf'><img src='public/assets/blackcat.jpg' class=\"img\"><br/><span>L'une de mes veilles étudier sur papier concernant une <span>cyber-attaque</span> (Black Cat X Oiltanking)</span></a>";
+
+                        </script>
+                        
+                        
+                        
+                        <script language="javascript">
+                        
+                            console.log("Début du script");
+                            var paquet = sessionStorage.getItem("paquet");
+                            var paquetwrite;
+                            console.log("ancien paquet :" + paquet)
+                        
+                            if ((paquet == "paquet_image_2") || (paquet == null))
+                            {
+                                paquet = "paquet_image_1";
+                                paquetwrite = paquet_image_1;
+                                paquetwrite.sort(function(){return 0.5 - Math.random()})
+                                document.writeln(paquetwrite[0]);
+                                document.writeln(paquetwrite[1]);
+                                document.writeln(paquetwrite[2]);
+                                document.writeln(paquetwrite[3]);
+
+                            }
+                        
+                            else if (paquet == "paquet_image_1")
                         {
-                            paquet = "paquet_image_1";
-                            paquetwrite = paquet_image_1;
-                            paquetwrite.sort(function(){return 0.5 - Math.random()})
-                            document.writeln(paquetwrite[0]);
-                            document.writeln(paquetwrite[1]);
-                            document.writeln(paquetwrite[2]);
-                        }
-                    
-                        else if (paquet == "paquet_image_1")
-                    {
-                            paquet = "paquet_image_2";
-                            paquetwrite = paquet_image_2;
-                            paquetwrite.sort(function(){return 0.5 - Math.random()})
-                            document.writeln(paquetwrite[0]);
-                            document.writeln(paquetwrite[1]);
-                            document.writeln(paquetwrite[2]);
-                        }
-                    
-                        else
-                        {
-                            document.writeln("Error 1");
-                            sessionStorage.setItem("paquet","paquet_image_1");
-                        }
-                    
-                        sessionStorage.setItem("paquet", paquet);
-                        console.log("NEW paquet :" + paquet)
-                    
-                    </script>
-                </article>
-                <div class="box-grid">
-                    <div class="box">
-                        <div class="container-img">
-                            <a href="public/assets/Veille Eliot.pdf" title="Veille Black Cat" target="_blank"><img src="public/assets/blackcat.jpg " alt="project1"></a>
-                        </div>
-                        <div class="container-content">
-                            <p>L'une de mes veilles étudier sur papier concernant une <span>cyber-attaque</span> (Black Cat X Oiltanking)</p>
-                        </div>
+                                paquet = "paquet_image_2";
+                                paquetwrite = paquet_image_2;
+                                paquetwrite.sort(function(){return 0.5 - Math.random()})
+                                document.writeln(paquetwrite[0]);
+                                document.writeln(paquetwrite[1]);
+                                document.writeln(paquetwrite[2]);
+                                document.writeln(paquetwrite[3]);
+
+                            }
+                        
+                            else
+                            {
+                                document.writeln("Error 1");
+                                sessionStorage.setItem("paquet","paquet_image_1");
+                            }
+                        
+                            sessionStorage.setItem("paquet", paquet);
+                            console.log("NEW paquet :" + paquet)
+                        
+                        </script>
                     </div>
-                </div>
+                </article>
             </div>
             <br/><br/>
         </section>
