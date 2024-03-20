@@ -38,6 +38,8 @@
     background-position: center center;
     /*background-size: cover;*/
     background-size: 100vw 100vh;
+    -webkit-background: url("../../public/assets/fond.png") center/cover;
+    -webkit-background-size: 100vw 100vh;
   }
   
 h1 {
