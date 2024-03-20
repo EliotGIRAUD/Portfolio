@@ -30,17 +30,29 @@
   }
 
   body {
-    overflow-x: hidden;
-    min-height: 100vh;
-    background : url("../../public/assets/fond.png") center/cover;
+    background : url("../assets/fond.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center center;
-    /*background-size: cover;*/
-    background-size: 100vw 100vh;
-    -webkit-background: url("../../public/assets/fond.png") center/cover;
-    -webkit-background-size: 100vw 100vh;
+    background-position: center;
+    background-size: cover;
+    -webkit-background: url("../assets/fond.png");
+    -webkit-background-size: cover;
   }
+
+  .background-body {
+    position: relative;
+  }
+
+  .background-body img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    left: 0;
+    top: 0;
+}
+
   
 h1 {
     text-transform: uppercase;
