@@ -198,11 +198,9 @@
     bottom: -100px;;
   }
 
-  #acceuil .wrapper{
-    margin-top: 90px;
+  #accueil .wrapper {
+    margin-top: 80px;
   }
-
-  
 
   #accueil .container-arrow {
     display: none;
@@ -214,6 +212,8 @@
     width: 300px !important;
     height: 300px !important;
   } 
+
+  
 
   #accueil .box-grid .border {
     height: 350px !important;
@@ -1107,6 +1107,10 @@ form button:hover {
     grid-template-columns: 1fr;
     gap: 53px;
     bottom: -100px;
+  }
+
+  #contact .social {
+    margin-left: 90px;
   }
 
   #contact .wrapper {

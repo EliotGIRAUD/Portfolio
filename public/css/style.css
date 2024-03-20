@@ -37,6 +37,7 @@
     background-size: cover;
     -webkit-background: url("../assets/fond.png");
     -webkit-background-size: cover;
+    overflow-x : hidden;
   }
 
   .background-body {
