@@ -292,5 +292,8 @@
     setupNav();
     setupReveal();
     setupMarquees();
+    if (window.PortfolioSkillsPhysics) {
+      window.PortfolioSkillsPhysics.setup();
+    }
   });
 })();

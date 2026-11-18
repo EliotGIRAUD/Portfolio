@@ -702,6 +702,59 @@
   padding: var(--space-3);
   overflow: hidden;
   transition: background 0.28s ease, border-color 0.28s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.skill-group.is-physics {
+  min-height: 280px;
+}
+
+.skill-group.is-physics .skill-group__index,
+.skill-group.is-physics h3 {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-group.is-physics .skill-tags {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 180px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.skill-group.is-physics .skill-tags li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  will-change: transform;
+  touch-action: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-group.is-physics {
+    min-height: 0;
+  }
+
+  .skill-group.is-physics .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .skill-group.is-physics .skill-tags li {
+    position: static;
+    transform: none !important;
+    will-change: auto;
+  }
 }
 
 .skill-group::before,
@@ -1400,6 +1453,20 @@ body.lightbox-open {
 #project .project-card__title {
   font-size: 1.35rem;
   margin: 0;
+}
+
+.project-card__year {
+  margin: -0.35rem 0 0;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.project-card__year time {
+  font: inherit;
+  color: inherit;
 }
 
 #project .project-card p {
