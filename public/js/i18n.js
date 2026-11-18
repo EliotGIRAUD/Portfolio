@@ -96,6 +96,7 @@
       'tag.fullstack': 'Full-stack',
       'tag.hosting': 'Hébergement',
       'tag.docs': 'Documentation',
+      'tag.docker': 'Docker',
       'tag.desktop': 'Desktop',
       'tag.spotify': 'Spotify',
       'tag.music': 'Musique',
@@ -129,7 +130,7 @@
       'safact.title': 'SAFACT, gestion foncière',
       'safact.year': '2026',
       'safact.body':
-        'Projet personnel pour un client&nbsp;: application métier interne de suivi des actes et procédures foncières (communes, dossiers, pièces, modèles Word/PDF, relances, rapports). Gros chantier sur plusieurs mois, mené de A à Z jusqu\'à la mise en prod et la documentation. En ligne sur <a href="https://app.safact.fr/" target="_blank" rel="noopener noreferrer">app.safact.fr <span class="visually-hidden">(nouvel onglet)</span></a>.',
+        'Projet mené avec un client réel&nbsp;: j\'ai d\'abord pris le temps de comprendre son métier et ses contraintes (actes, communes, dossiers, pièces, relances, rapports), puis conçu une application interne calée sur ses parcours au quotidien. Stack full-stack moderne (<strong>Nuxt</strong>, <strong>Vue</strong>, <strong>TypeScript</strong>, <strong>Tailwind</strong>, <strong>Prisma</strong>, <strong>PostgreSQL</strong>), avec <strong>Docker</strong> pour un déploiement propre et reproductible. De l\'analyse du besoin à la mise en prod, la documentation et l\'hébergement&nbsp;: un outil pensé pour lui, pas un produit générique. En ligne sur <a href="https://app.safact.fr/" target="_blank" rel="noopener noreferrer">app.safact.fr <span class="visually-hidden">(nouvel onglet)</span></a>.',
       'safact.stack': 'Stack : Nuxt · Vue · TypeScript · Tailwind · Prisma · PostgreSQL · Docker',
       'bass.title': 'BassOrder, tri musical',
       'bass.year': '2026',
@@ -289,6 +290,7 @@
       'tag.fullstack': 'Full-stack',
       'tag.hosting': 'Hosting',
       'tag.docs': 'Documentation',
+      'tag.docker': 'Docker',
       'tag.desktop': 'Desktop',
       'tag.spotify': 'Spotify',
       'tag.music': 'Music',
@@ -322,7 +324,7 @@
       'safact.title': 'SAFACT, land management',
       'safact.year': '2026',
       'safact.body':
-        'Personal project for a client: internal business app to track administrative acts and land procedures (municipalities, case files, documents, Word/PDF templates, follow-ups, reports). A multi-month build, done end to end through production and documentation. Live at <a href="https://app.safact.fr/" target="_blank" rel="noopener noreferrer">app.safact.fr <span class="visually-hidden">(opens in a new tab)</span></a>.',
+        'Built with a real client: I first took time to understand his business and constraints (acts, municipalities, case files, documents, follow-ups, reports), then designed an internal app aligned with day-to-day workflows. Modern full-stack stack (<strong>Nuxt</strong>, <strong>Vue</strong>, <strong>TypeScript</strong>, <strong>Tailwind</strong>, <strong>Prisma</strong>, <strong>PostgreSQL</strong>), with <strong>Docker</strong> for clean, reproducible deployment. From needs analysis to production, documentation, and hosting: a tool shaped for him, not a generic product. Live at <a href="https://app.safact.fr/" target="_blank" rel="noopener noreferrer">app.safact.fr <span class="visually-hidden">(opens in a new tab)</span></a>.',
       'safact.stack': 'Stack: Nuxt · Vue · TypeScript · Tailwind · Prisma · PostgreSQL · Docker',
       'bass.title': 'BassOrder, music sorting',
       'bass.year': '2026',
