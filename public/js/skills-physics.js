@@ -264,22 +264,6 @@
       rafId = window.requestAnimationFrame(tick);
     }
 
-    function replay() {
-      worlds.forEach(function (world) {
-        world.active = true;
-        spawnWorld(world);
-      });
-      ensureRunning();
-    }
-
-    var replayBtn = section.querySelector('[data-skills-replay]');
-    if (replayBtn) {
-      replayBtn.hidden = false;
-      replayBtn.addEventListener('click', function () {
-        replay();
-      });
-    }
-
     var sectionObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -332,12 +316,9 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('wheel', onWheel, { passive: true });
     window.addEventListener('resize', onResize);
-
-    window.PortfolioSkillsPhysics.replay = replay;
   }
 
   window.PortfolioSkillsPhysics = {
-    setup: setupSkillsPhysics,
-    replay: function () {}
+    setup: setupSkillsPhysics
   };
 })();

@@ -411,8 +411,7 @@ body.nav-open > header.is-rail {
   body > header,
   .site-nav,
   .logo-mark,
-  body > header a,
-  .skills-replay__icon {
+  body > header a {
     transition: none !important;
   }
 }
