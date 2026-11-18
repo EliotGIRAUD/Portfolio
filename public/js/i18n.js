@@ -33,7 +33,7 @@
       'aria.cv': 'Télécharger le CV en PDF (nouvel onglet)',
       'about.title': 'Qui suis-je ?',
       'about.p1':
-        'J\'ai <strong class="accent">24 ans</strong> et je suis en deuxième année de MBA développement full-stack à <strong class="accent">My Digital School</strong>. En alternance chez <strong class="accent">Darewell</strong>, j\'interviens sur <strong class="accent">kanam.io</strong> (SIRH) et <strong class="accent">probante.fr</strong> (organismes de formation), de l\'interface à l\'API. Avant ça, une année d\'alternance bachelor chez <strong class="accent">Vinatis</strong> (2024-2025) sur l\'e-commerce (Vue, Nuxt).',
+        'J\'ai <strong class="accent">24 ans</strong> et je suis en deuxième année de MBA développement full-stack à <strong class="accent">My Digital School</strong>. En alternance chez <strong class="accent">Darewell</strong>, j\'interviens sur <strong class="accent">kanam.io</strong> (SIRH) et <strong class="accent">probante.fr</strong> (organismes de formation), de l\'interface à l\'API. Auparavant, j\'ai effectué une année d\'alternance en bachelor chez <strong class="accent">Vinatis</strong> (2024-2025) sur l\'e-commerce (Vue, Nuxt).',
       'about.p2':
         'Curieux et rigoureux, j\'aime livrer du code lisible, maintenable et aligné sur les besoins métiers, que ce soit sur un site grand public ou un outil interne.',
       'about.aside': 'En dehors du code',
@@ -223,7 +223,7 @@
       'aria.cv': 'Download CV as PDF (opens in a new tab)',
       'about.title': 'About me',
       'about.p1':
-        'I am <strong class="accent">24</strong> and in the second year of a full-stack development MBA at <strong class="accent">My Digital School</strong>. As an apprentice at <strong class="accent">Darewell</strong>, I work on <strong class="accent">kanam.io</strong> (HRIS) and <strong class="accent">probante.fr</strong> (training organizations), from UI to API. Before that, a bachelor apprenticeship year at <strong class="accent">Vinatis</strong> (2024-2025) on e-commerce (Vue, Nuxt).',
+        'I am <strong class="accent">24</strong> and in the second year of a full-stack development MBA at <strong class="accent">My Digital School</strong>. As an apprentice at <strong class="accent">Darewell</strong>, I work on <strong class="accent">kanam.io</strong> (HRIS) and <strong class="accent">probante.fr</strong> (training organizations), from UI to API. Previously, I completed a bachelor apprenticeship year at <strong class="accent">Vinatis</strong> (2024-2025) on e-commerce (Vue, Nuxt).',
       'about.p2':
         'Curious and rigorous, I like shipping readable, maintainable code aligned with business needs, whether for a public site or an internal tool.',
       'about.aside': 'Outside of code',
