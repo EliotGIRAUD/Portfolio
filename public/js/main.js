@@ -351,10 +351,45 @@
     });
   }
 
+  function setupProjectToggles() {
+    function label(key, fallback) {
+      return window.PortfolioI18n ? window.PortfolioI18n.t(key) : fallback;
+    }
+
+    document.querySelectorAll('[data-project-more]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = btn.closest('.project-card');
+        var body = card ? card.querySelector('.project-card__body') : null;
+        if (!body) return;
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        var next = !expanded;
+        btn.setAttribute('aria-expanded', next ? 'true' : 'false');
+        body.classList.toggle('is-clamped', !next);
+        btn.textContent = next ? label('projects.less', 'Voir moins') : label('projects.more', 'Voir plus');
+      });
+    });
+
+    var grid = document.querySelector('[data-projects-grid]');
+    var toggle = document.querySelector('[data-projects-toggle]');
+    if (!grid || !toggle) return;
+
+    toggle.addEventListener('click', function () {
+      var expanded = grid.classList.toggle('is-expanded');
+      toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      toggle.textContent = expanded
+        ? label('projects.showLess', 'Réduire')
+        : label('projects.showAll', 'Voir tous les projets');
+      if (!expanded) {
+        toggle.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     setupNav();
     setupReveal();
     setupMarquees();
+    setupProjectToggles();
     if (window.PortfolioSkillsPhysics) {
       window.PortfolioSkillsPhysics.setup();
     }

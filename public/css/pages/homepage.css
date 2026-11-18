@@ -1484,6 +1484,73 @@ body.lightbox-open {
   font-size: 1rem;
 }
 
+#project .project-card__body {
+  margin: 0;
+}
+
+#project .project-card__body.is-clamped {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+#project .project-card__more {
+  appearance: none;
+  align-self: flex-start;
+  margin: -0.35rem 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 0 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.28s ease, color 0.28s ease;
+}
+
+#project .project-card__more:hover {
+  color: var(--link-on-dark-hover);
+  background-size: 100% 1px;
+}
+
+.project-grid:not(.is-expanded) [data-project-extra] {
+  display: none;
+}
+
+.projects-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.projects-toggle {
+  appearance: none;
+  min-height: 2.5rem;
+  padding: 0.55rem 1.15rem;
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-color);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.projects-toggle:hover {
+  color: #12100e;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
 #project .project-card p span {
   color: var(--secondary-color);
   font-weight: 600;

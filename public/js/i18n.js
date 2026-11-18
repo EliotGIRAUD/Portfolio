@@ -82,6 +82,10 @@
       'projects.title': 'Projets',
       'projects.intro':
         'Des preuves concrètes&nbsp;: client réel, produits full-stack, et quelques travaux plus courts.',
+      'projects.more': 'Voir plus',
+      'projects.less': 'Voir moins',
+      'projects.showAll': 'Voir tous les projets',
+      'projects.showLess': 'Réduire',
       'marquee.label': "Bandeau d'aperçus des projets",
       'marquee.help':
         'Les aperçus défilent automatiquement. Cliquez et glissez pour faire défiler plus vite.',
@@ -271,6 +275,10 @@
       'projects.title': 'Projects',
       'projects.intro':
         'Concrete proof: a real client, full-stack products, and a few shorter builds.',
+      'projects.more': 'Show more',
+      'projects.less': 'Show less',
+      'projects.showAll': 'Show all projects',
+      'projects.showLess': 'Show less',
       'marquee.label': 'Project preview strip',
       'marquee.help':
         'Previews scroll automatically. Click and drag to scrub faster.',

@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="Portfolio : Darewell, SAFACT, Vinatis. Développement web full-stack à Annecy.">
     <meta name="twitter:image" content="https://eliotgiraud.github.io/Portfolio/public/assets/Tete.jpg">
     <title>Eliot Giraud | Développeur web full-stack | Annecy</title>
-    <link rel="stylesheet" href="public/css/style.css?v=section-rail-2">
+    <link rel="stylesheet" href="public/css/style.css?v=show-more-1">
     <link rel="icon" href="public/assets/Tete.jpg" type="image/jpeg">
     <link rel="apple-touch-icon" href="public/assets/Tete.jpg">
     <script type="application/ld+json">
@@ -377,7 +377,7 @@
                     </div>
                 </div>
 
-                <div class="box-grid project-grid">
+                <div class="box-grid project-grid" data-projects-grid>
                     <article class="project-card box project-card--featured">
                         <div class="container-img">
                             <a href="https://app.safact.fr/" title="Application SAFACT (nouvel onglet)" data-i18n-attr="title:thumb.safact" target="_blank" rel="noopener noreferrer">
@@ -387,13 +387,14 @@
                         <div class="container-content">
                             <h3 class="project-card__title" data-i18n="safact.title">SAFACT, gestion foncière</h3>
                             <p class="project-card__year"><time datetime="2026" data-i18n="safact.year">2026</time></p>
-                            <p data-i18n-html="safact.body">
+                            <p class="project-card__body is-clamped" data-i18n-html="safact.body">
                                 Projet personnel pour un client&nbsp;: application métier interne de suivi des actes et procédures foncières
                                 (communes, dossiers, pièces, modèles Word/PDF, relances, rapports). Gros chantier sur plusieurs mois,
                                 mené de A à Z jusqu'à la mise en prod et la documentation.
                                 En ligne sur
                                 <a href="https://app.safact.fr/" target="_blank" rel="noopener noreferrer">app.safact.fr <span class="visually-hidden">(nouvel onglet)</span></a>.
                             </p>
+                            <button type="button" class="project-card__more" data-project-more aria-expanded="false" data-i18n="projects.more">Voir plus</button>
                             <ul class="project-tags">
                                 <li data-i18n="tag.client">Client</li>
                                 <li data-i18n="tag.fullstack">Full-stack</li>
@@ -417,12 +418,13 @@
                         <div class="container-content">
                             <h3 class="project-card__title" data-i18n="bass.title">BassOrder, tri musical</h3>
                             <p class="project-card__year"><time datetime="2026" data-i18n="bass.year">2026</time></p>
-                            <p data-i18n-html="bass.body">
+                            <p class="project-card__body is-clamped" data-i18n-html="bass.body">
                                 App desktop Windows (macOS en route) pour ranger une bibliothèque chaotique :
                                 playlists / likes Spotify et dossiers locaux, suggestions de genres, puis copie ou déplacement
                                 vers Rock, Jazz, Hip-Hop, Electro, etc. Site et téléchargement sur
                                 <a href="https://bassorder.smegg.cloud/" target="_blank" rel="noopener noreferrer">bassorder.smegg.cloud <span class="visually-hidden">(nouvel onglet)</span></a>.
                             </p>
+                            <button type="button" class="project-card__more" data-project-more aria-expanded="false" data-i18n="projects.more">Voir plus</button>
                             <ul class="project-tags">
                                 <li data-i18n="tag.desktop">Desktop</li>
                                 <li data-i18n="tag.spotify">Spotify</li>
@@ -445,10 +447,11 @@
                         <div class="container-content">
                             <h3 class="project-card__title" data-i18n="smegg.title">SMEGG, réseau social</h3>
                             <p class="project-card__year"><time datetime="2026" data-i18n="smegg.year">2026</time></p>
-                            <p data-i18n-html="smegg.body">
+                            <p class="project-card__body is-clamped" data-i18n-html="smegg.body">
                                 Application web pensée avec deux amis pour garder le lien : publications photo et vidéo, groupes, messagerie privée,
                                 et musique au centre (aperçus Spotify, Deezer, SoundCloud, YouTube). Hébergement VPS perso&nbsp;: app, API et base.
                             </p>
+                            <button type="button" class="project-card__more" data-project-more aria-expanded="false" data-i18n="projects.more">Voir plus</button>
                             <ul class="project-tags">
                                 <li data-i18n="tag.fullstack">Full-stack</li>
                                 <li data-i18n="tag.media">Médias</li>
@@ -467,10 +470,11 @@
                         <div class="container-content">
                             <h3 class="project-card__title" data-i18n="grosmino.title">Grosmino's, livraison de repas</h3>
                             <p class="project-card__year"><time datetime="2025" data-i18n="grosmino.year">2025</time></p>
-                            <p data-i18n-html="grosmino.body">
+                            <p class="project-card__body is-clamped" data-i18n-html="grosmino.body">
                                 Projet façon Uber&nbsp;Eats : espace restaurateur, parcours client et back-office administrateur
                                 pour piloter la plateforme (rôles séparés).
                             </p>
+                            <button type="button" class="project-card__more" data-project-more aria-expanded="false" data-i18n="projects.more">Voir plus</button>
                             <ul class="project-tags">
                                 <li data-i18n="tag.webapp">Web app</li>
                                 <li data-i18n="tag.roles">Rôles</li>
@@ -479,7 +483,7 @@
                             <p class="project-links"><a href="https://github.com/EliotGIRAUD/uberEatLike" target="_blank" rel="noopener noreferrer"><span data-i18n="link.github">Code sur GitHub</span> <span class="visually-hidden" data-i18n="aria.newTab">(nouvel onglet)</span></a></p>
                         </div>
                     </article>
-                    <article class="project-card box">
+                    <article class="project-card box" data-project-extra>
                         <div class="container-img">
                             <a href="https://eliotgiraud.github.io/Gaudi/" title="Démo Musée Gaudi" data-i18n-attr="title:thumb.gaudi" target="_blank" rel="noopener noreferrer">
                                 <img src="public/assets/gaudi.png" alt="Aperçu du site musée Gaudi" data-i18n-attr="alt:alt.gaudi" loading="lazy" decoding="async" width="640" height="400">
@@ -488,7 +492,8 @@
                         <div class="container-content">
                             <h3 class="project-card__title" data-i18n="gaudi.title">Musée Gaudi</h3>
                             <p class="project-card__year"><time datetime="2024" data-i18n="gaudi.year">2024</time></p>
-                            <p data-i18n="gaudi.body">Site vitrine pour un musée : parcours et présentation de l'œuvre de Gaudi.</p>
+                            <p class="project-card__body is-clamped" data-i18n="gaudi.body">Site vitrine pour un musée : parcours et présentation de l'œuvre de Gaudi.</p>
+                            <button type="button" class="project-card__more" data-project-more aria-expanded="false" data-i18n="projects.more">Voir plus</button>
                             <ul class="project-tags">
                                 <li data-i18n="tag.showcase">Site vitrine</li>
                             </ul>
@@ -496,7 +501,7 @@
                             <p class="project-links"><a href="https://eliotgiraud.github.io/Gaudi/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.viewDemo">Voir la démo</span> <span class="visually-hidden" data-i18n="aria.newTab">(nouvel onglet)</span></a></p>
                         </div>
                     </article>
-                    <article class="project-card box">
+                    <article class="project-card box" data-project-extra>
                         <div class="container-img">
                             <a href="https://grannysmith-annecy.fr/" title="Granny Smith Annecy" data-i18n-attr="title:thumb.granny" target="_blank" rel="noopener noreferrer">
                                 <img src="public/assets/grannysmith.png" alt="Aperçu du site Granny Smith" data-i18n-attr="alt:alt.granny" loading="lazy" decoding="async" width="640" height="400">
@@ -505,7 +510,8 @@
                         <div class="container-content">
                             <h3 class="project-card__title" data-i18n="granny.title">Granny Smith</h3>
                             <p class="project-card__year"><time datetime="2024" data-i18n="granny.year">2024</time></p>
-                            <p data-i18n="granny.body">Site vitrine pour un restaurant à Annecy.</p>
+                            <p class="project-card__body is-clamped" data-i18n="granny.body">Site vitrine pour un restaurant à Annecy.</p>
+                            <button type="button" class="project-card__more" data-project-more aria-expanded="false" data-i18n="projects.more">Voir plus</button>
                             <ul class="project-tags">
                                 <li data-i18n="tag.showcase">Site vitrine</li>
                             </ul>
@@ -513,7 +519,7 @@
                             <p class="project-links"><a href="https://grannysmith-annecy.fr/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.viewSite">Voir le site</span> <span class="visually-hidden" data-i18n="aria.newTab">(nouvel onglet)</span></a></p>
                         </div>
                     </article>
-                    <article class="project-card box">
+                    <article class="project-card box" data-project-extra>
                         <div class="container-img">
                             <a href="https://github.com/EliotGIRAUD/ECOMOBIL" title="Dépôt ECOMOBIL sur GitHub" data-i18n-attr="title:thumb.eco" target="_blank" rel="noopener noreferrer">
                                 <img src="public/assets/ecomobile.png" alt="Aperçu ECOMOBIL" data-i18n-attr="alt:alt.eco" loading="lazy" decoding="async" width="640" height="400">
@@ -522,7 +528,8 @@
                         <div class="container-content">
                             <h3 class="project-card__title" data-i18n="eco.title">ECOMOBIL</h3>
                             <p class="project-card__year"><time datetime="2024" data-i18n="eco.year">2024</time></p>
-                            <p data-i18n="eco.body">Réservation de véhicules (trottinettes, vélos…). Démo non hébergée.</p>
+                            <p class="project-card__body is-clamped" data-i18n="eco.body">Réservation de véhicules (trottinettes, vélos…). Démo non hébergée.</p>
+                            <button type="button" class="project-card__more" data-project-more aria-expanded="false" data-i18n="projects.more">Voir plus</button>
                             <ul class="project-tags">
                                 <li data-i18n="tag.webapp">Web app</li>
                                 <li data-i18n="tag.api">API</li>
@@ -531,7 +538,7 @@
                             <p class="project-links"><a href="https://github.com/EliotGIRAUD/ECOMOBIL" target="_blank" rel="noopener noreferrer"><span data-i18n="link.github">Code sur GitHub</span> <span class="visually-hidden" data-i18n="aria.newTab">(nouvel onglet)</span></a></p>
                         </div>
                     </article>
-                    <article class="project-card box">
+                    <article class="project-card box" data-project-extra>
                         <div class="container-img">
                             <a href="https://github.com/EliotGIRAUD/Morpion" title="Dépôt Morpion sur GitHub" data-i18n-attr="title:thumb.morpion" target="_blank" rel="noopener noreferrer">
                                 <img src="public/assets/Morpion.png" alt="Aperçu du jeu Morpion" data-i18n-attr="alt:alt.morpion" loading="lazy" decoding="async" width="640" height="400">
@@ -540,7 +547,8 @@
                         <div class="container-content">
                             <h3 class="project-card__title" data-i18n="morpion.title">Morpion 1v1</h3>
                             <p class="project-card__year"><time datetime="2024" data-i18n="morpion.year">2024</time></p>
-                            <p data-i18n="morpion.body">Jeu interactif en local avec interface graphique.</p>
+                            <p class="project-card__body is-clamped" data-i18n="morpion.body">Jeu interactif en local avec interface graphique.</p>
+                            <button type="button" class="project-card__more" data-project-more aria-expanded="false" data-i18n="projects.more">Voir plus</button>
                             <ul class="project-tags">
                                 <li data-i18n="tag.desktop">Desktop</li>
                                 <li data-i18n="tag.game">Jeu</li>
@@ -549,6 +557,9 @@
                             <p class="project-links"><a href="https://github.com/EliotGIRAUD/Morpion" target="_blank" rel="noopener noreferrer"><span data-i18n="link.github">Code sur GitHub</span> <span class="visually-hidden" data-i18n="aria.newTab">(nouvel onglet)</span></a></p>
                         </div>
                     </article>
+                </div>
+                <div class="projects-toggle-wrap">
+                    <button type="button" class="projects-toggle" data-projects-toggle aria-expanded="false" data-i18n="projects.showAll">Voir tous les projets</button>
                 </div>
             </div>
         </section>
@@ -598,8 +609,8 @@
         </nav>
         <p data-i18n-html="footer.credit">Site créé par <a href="index.html">Eliot Giraud</a> · © 2026</p>
     </footer>
-    <script src="public/js/i18n.js?v=section-rail-2"></script>
-    <script src="public/js/skills-physics.js?v=section-rail-2"></script>
-    <script src="public/js/main.js?v=section-rail-2"></script>
+    <script src="public/js/i18n.js?v=show-more-1"></script>
+    <script src="public/js/skills-physics.js?v=show-more-1"></script>
+    <script src="public/js/main.js?v=show-more-1"></script>
 </body>
 </html>
