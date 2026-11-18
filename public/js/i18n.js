@@ -38,7 +38,7 @@
         'Curieux et rigoureux, j\'aime livrer du code lisible, maintenable et aligné sur les besoins métiers, que ce soit sur un site grand public ou un outil interne.',
       'about.aside': 'En dehors du code',
       'about.music':
-        'La <strong>musique</strong> occupe une vraie place dans mon quotidien. J\'ai acheté <strong>FL Studio</strong> et je commence à créer mes propres sons, en explorant la prod petit à petit. Le <strong>diabolo</strong> m\'aide à rester concentré, et le <strong>snowboard</strong> l\'hiver pour couper du clavier et me challenger autrement.',
+        'La <strong>musique</strong> occupe une vraie place dans mon quotidien. J\'ai acheté <strong>FL Studio</strong> et je commence à créer mes propres sons, en explorant la prod petit à petit. Le <strong>diabolo</strong> affine ma concentration ; l\'hiver, le <strong>snowboard</strong> me sort du clavier et me pousse à me challenger autrement.',
       'about.diaboloAlt': 'Eliot pratiquant le diabolo',
       'about.snowAlt': 'Eliot en snowboard',
       'exp.title': 'Expériences',
@@ -228,7 +228,7 @@
         'Curious and rigorous, I like shipping readable, maintainable code aligned with business needs, whether for a public site or an internal tool.',
       'about.aside': 'Outside of code',
       'about.music':
-        '<strong>Music</strong> is a real part of my daily life. I bought <strong>FL Studio</strong> and I am starting to create my own sounds, exploring production step by step. <strong>Diabolo</strong> helps me stay focused, and <strong>snowboarding</strong> in winter gets me off the keyboard and challenges me differently.',
+        '<strong>Music</strong> is a real part of my daily life. I bought <strong>FL Studio</strong> and I am starting to create my own sounds, exploring production step by step. <strong>Diabolo</strong> sharpens my focus; in winter, <strong>snowboarding</strong> gets me off the keyboard and pushes me to challenge myself differently.',
       'about.diaboloAlt': 'Eliot practicing diabolo',
       'about.snowAlt': 'Eliot snowboarding',
       'exp.title': 'Experience',
