@@ -5,9 +5,11 @@
     var header = document.querySelector('body > header');
     var toggle = document.querySelector('.nav-toggle');
     var panel = document.getElementById('nav-panel');
-    if (!toggle || !panel) return;
+    var rail = document.getElementById('section-rail');
+    var desktopMq = window.matchMedia('(min-width: 1121px)');
 
     function setOpen(open) {
+      if (!toggle || !panel) return;
       panel.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       var openLabel = window.PortfolioI18n ? window.PortfolioI18n.t('nav.open') : 'Ouvrir le menu';
@@ -22,45 +24,81 @@
       }
     }
 
-    function syncRail() {
+    function syncDesktopChrome() {
       if (!header) return;
+      var desktop = desktopMq.matches;
       var threshold = Math.max(140, Math.round(window.innerHeight * 0.58));
-      var rail = (window.scrollY || window.pageYOffset) > threshold;
-      var wasRail = header.classList.contains('is-rail');
-      header.classList.toggle('is-rail', rail);
-      header.classList.toggle('fixed', rail);
-      if (wasRail && !rail) setOpen(false);
-    }
+      var scrolled = (window.scrollY || window.pageYOffset) > threshold;
+      var showRail = desktop && scrolled && !!rail;
 
-    var railQueued = false;
-    function onScrollOrResize() {
-      if (railQueued) return;
-      railQueued = true;
-      window.requestAnimationFrame(function () {
-        railQueued = false;
-        syncRail();
-      });
-    }
-
-    toggle.addEventListener('click', function () {
-      setOpen(!panel.classList.contains('is-open'));
-    });
-
-    panel.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        setOpen(false);
-      });
-    });
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && panel.classList.contains('is-open')) {
-        setOpen(false);
+      if (rail) {
+        rail.hidden = !showRail;
+        rail.classList.toggle('is-visible', showRail);
       }
-    });
+
+      header.classList.toggle('is-faded', showRail);
+      header.classList.toggle('fixed', !desktop && scrolled);
+    }
+
+    function syncActiveSection() {
+      if (!rail || !desktopMq.matches) return;
+      var links = rail.querySelectorAll('.section-rail__link');
+      if (!links.length) return;
+
+      var mid = window.innerHeight * 0.35;
+      var activeId = null;
+      links.forEach(function (link) {
+        var id = link.getAttribute('data-section');
+        var section = id ? document.getElementById(id) : null;
+        if (!section) return;
+        var rect = section.getBoundingClientRect();
+        if (rect.top <= mid && rect.bottom > mid) activeId = id;
+      });
+      if (!activeId && links[0]) activeId = links[0].getAttribute('data-section');
+
+      links.forEach(function (link) {
+        link.classList.toggle('is-active', link.getAttribute('data-section') === activeId);
+      });
+    }
+
+    var syncQueued = false;
+    function onScrollOrResize() {
+      if (syncQueued) return;
+      syncQueued = true;
+      window.requestAnimationFrame(function () {
+        syncQueued = false;
+        syncDesktopChrome();
+        syncActiveSection();
+      });
+    }
+
+    if (toggle && panel) {
+      toggle.addEventListener('click', function () {
+        setOpen(!panel.classList.contains('is-open'));
+      });
+
+      panel.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          setOpen(false);
+        });
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && panel.classList.contains('is-open')) {
+          setOpen(false);
+        }
+      });
+    }
 
     window.addEventListener('scroll', onScrollOrResize, { passive: true });
     window.addEventListener('resize', onScrollOrResize);
-    syncRail();
+    if (desktopMq.addEventListener) {
+      desktopMq.addEventListener('change', onScrollOrResize);
+    } else if (desktopMq.addListener) {
+      desktopMq.addListener(onScrollOrResize);
+    }
+    syncDesktopChrome();
+    syncActiveSection();
   }
 
   function setupReveal() {

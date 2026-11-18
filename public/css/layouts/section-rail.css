@@ -1,0 +1,96 @@
+/******************************* rail sections desktop *************************************/
+
+.section-rail {
+  --rail-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  position: fixed;
+  top: 50%;
+  right: clamp(0.85rem, 2vw, 1.4rem);
+  z-index: 98;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.85rem;
+  transform: translateY(-50%) translateX(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s var(--rail-ease), transform 0.45s var(--rail-ease);
+}
+
+.section-rail.is-visible {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+  pointer-events: auto;
+}
+
+.section-rail__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 1.15rem;
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+.section-rail__tick {
+  display: block;
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+  background: rgba(242, 235, 227, 0.28);
+  transition:
+    width 0.28s var(--rail-ease),
+    background 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.section-rail__label {
+  position: absolute;
+  right: calc(14px + 0.8rem);
+  white-space: nowrap;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  opacity: 0;
+  transform: translateX(6px);
+  pointer-events: none;
+  transition: opacity 0.28s var(--rail-ease), transform 0.28s var(--rail-ease);
+}
+
+.section-rail__link:hover .section-rail__label,
+.section-rail__link:focus-visible .section-rail__label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section-rail__link:hover .section-rail__tick,
+.section-rail__link:focus-visible .section-rail__tick {
+  width: 22px;
+  background: var(--accent);
+}
+
+.section-rail__link.is-active .section-rail__tick {
+  width: 28px;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(196, 165, 116, 0.35);
+}
+
+.section-rail__link:focus-visible {
+  outline: none;
+}
+
+@media screen and (min-width: 1121px) {
+  .section-rail {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-rail,
+  .section-rail__tick,
+  .section-rail__label {
+    transition: none !important;
+  }
+}
