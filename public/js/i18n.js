@@ -62,8 +62,8 @@
       'skills.title': 'Compétences',
       'skills.intro':
         'Du composant UI à la persistance des données&nbsp;: stacks JavaScript modernes et bases PHP/Symfony.',
-      'skills.replay': 'Relancer l’animation',
-      'skills.replayAria': 'Relancer l’animation des compétences',
+      'skills.replay': 'Rejouer',
+      'skills.replayAria': 'Rejouer l’animation des compétences',
       'skills.front': 'Front-end',
       'skills.back': 'Back-end &amp; données',
       'skills.tools': 'Outils &amp; plateformes',
@@ -252,7 +252,7 @@
       'skills.title': 'Skills',
       'skills.intro':
         'From UI components to data persistence: modern JavaScript stacks and PHP/Symfony foundations.',
-      'skills.replay': 'Replay animation',
+      'skills.replay': 'Replay',
       'skills.replayAria': 'Replay the skills animation',
       'skills.front': 'Front-end',
       'skills.back': 'Back-end &amp; data',

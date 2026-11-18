@@ -2,6 +2,7 @@
   'use strict';
 
   function setupNav() {
+    var header = document.querySelector('body > header');
     var toggle = document.querySelector('.nav-toggle');
     var panel = document.getElementById('nav-panel');
     if (!toggle || !panel) return;
@@ -21,6 +22,26 @@
       }
     }
 
+    function syncRail() {
+      if (!header) return;
+      var threshold = Math.max(140, Math.round(window.innerHeight * 0.58));
+      var rail = (window.scrollY || window.pageYOffset) > threshold;
+      var wasRail = header.classList.contains('is-rail');
+      header.classList.toggle('is-rail', rail);
+      header.classList.toggle('fixed', rail);
+      if (wasRail && !rail) setOpen(false);
+    }
+
+    var railQueued = false;
+    function onScrollOrResize() {
+      if (railQueued) return;
+      railQueued = true;
+      window.requestAnimationFrame(function () {
+        railQueued = false;
+        syncRail();
+      });
+    }
+
     toggle.addEventListener('click', function () {
       setOpen(!panel.classList.contains('is-open'));
     });
@@ -36,6 +57,10 @@
         setOpen(false);
       }
     });
+
+    window.addEventListener('scroll', onScrollOrResize, { passive: true });
+    window.addEventListener('resize', onScrollOrResize);
+    syncRail();
   }
 
   function setupReveal() {

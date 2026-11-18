@@ -1,7 +1,21 @@
 /******************************* header (barre du site uniquement) *************************************/
 
 body > header {
-  transition: background-color 0.35s ease, border-color 0.35s ease, padding 0.35s ease;
+  --header-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    background-color 0.45s var(--header-ease),
+    border-color 0.45s var(--header-ease),
+    border-radius 0.55s var(--header-ease),
+    padding 0.55s var(--header-ease),
+    width 0.55s var(--header-ease),
+    max-width 0.55s var(--header-ease),
+    top 0.55s var(--header-ease),
+    right 0.55s var(--header-ease),
+    left 0.55s var(--header-ease),
+    bottom 0.55s var(--header-ease),
+    transform 0.55s var(--header-ease),
+    box-shadow 0.45s var(--header-ease),
+    backdrop-filter 0.45s ease;
   width: 100%;
   padding: var(--space-1) var(--space-3);
   background-color: rgba(18, 16, 14, 0.72) !important;
@@ -28,6 +42,7 @@ body > header.fixed {
   margin: auto;
   max-width: 1200px;
   gap: var(--space-2);
+  transition: gap 0.45s var(--header-ease), max-width 0.45s var(--header-ease);
 }
 
 .lang-switch {
@@ -39,6 +54,7 @@ body > header.fixed {
   border-radius: var(--radius-sm);
   background: rgba(18, 16, 14, 0.55);
   flex-shrink: 0;
+  transition: opacity 0.35s ease, transform 0.45s var(--header-ease);
 }
 
 .lang-switch__btn {
@@ -69,6 +85,7 @@ body > header.fixed {
 
 body > header nav .menu-logo {
   text-decoration: none;
+  transition: transform 0.45s var(--header-ease);
 }
 
 .logo-mark {
@@ -79,6 +96,11 @@ body > header nav .menu-logo {
   color: var(--accent);
   display: inline-block;
   line-height: 1;
+  transition: font-size 0.45s var(--header-ease);
+}
+
+body > header .menu-links {
+  transition: opacity 0.35s ease;
 }
 
 body > header .menu-links ul {
@@ -87,6 +109,7 @@ body > header .menu-links ul {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.25rem 0.35rem;
+  transition: gap 0.45s var(--header-ease);
 }
 
 body > header ul li {
@@ -105,7 +128,7 @@ body > header ul li {
 body > header a {
   text-decoration: none;
   color: var(--text-muted);
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, padding 0.35s ease, background 0.25s ease;
   padding: 6px 10px;
   border-radius: var(--radius-sm);
 }
@@ -143,6 +166,7 @@ body > header .menu-links ul li a:hover::after {
   background: var(--surface-card);
   cursor: pointer;
   color: inherit;
+  transition: width 0.35s ease, height 0.35s ease, border-radius 0.35s ease;
 }
 
 .nav-toggle__bar {
@@ -215,6 +239,108 @@ body.nav-open {
   transform: translateY(-8px) rotate(-45deg);
 }
 
+/* -------- Rail latéral après scroll -------- */
+
+body > header.is-rail {
+  position: fixed;
+  top: 50%;
+  left: auto;
+  right: clamp(0.65rem, 1.8vw, 1.15rem);
+  bottom: auto;
+  width: auto;
+  max-width: none;
+  padding: 0.85rem 0.55rem;
+  border: 1px solid rgba(196, 165, 116, 0.22);
+  border-bottom: 1px solid rgba(196, 165, 116, 0.22);
+  border-radius: 18px;
+  background-color: rgba(18, 16, 14, 0.78) !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  transform: translateY(-50%);
+  backdrop-filter: blur(16px) saturate(1.08);
+  -webkit-backdrop-filter: blur(16px) saturate(1.08);
+}
+
+body > header.is-rail .site-nav {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: none;
+  margin: 0;
+  gap: 0.85rem;
+}
+
+body > header.is-rail .menu-logo {
+  order: 0;
+}
+
+body > header.is-rail .logo-mark {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+body > header.is-rail .menu-links {
+  display: block;
+  order: 1;
+}
+
+body > header.is-rail .menu-links ul {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.15rem;
+}
+
+body > header.is-rail .menu-links ul li {
+  width: 100%;
+}
+
+body > header.is-rail .menu-links ul li a {
+  writing-mode: horizontal-tb;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: rgba(242, 235, 227, 0.62);
+}
+
+body > header.is-rail .menu-links ul li a::after {
+  display: none;
+}
+
+body > header.is-rail .menu-links ul li a:hover,
+body > header.is-rail .menu-links ul li a:focus-visible {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+body > header.is-rail .lang-switch {
+  order: 2;
+  flex-direction: column;
+  gap: 2px;
+  padding: 2px;
+}
+
+body > header.is-rail .lang-switch__btn {
+  min-width: 2rem;
+  min-height: 1.65rem;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.68rem;
+}
+
+body > header.is-rail .nav-toggle {
+  display: none;
+}
+
+body > header.is-rail .nav-panel {
+  display: none !important;
+}
+
+body.nav-open > header.is-rail {
+  /* le rail desktop n'ouvre pas le panneau mobile */
+}
+
 @media screen and (max-width: 1120px) {
   body > header .menu-links {
     display: none;
@@ -230,5 +356,63 @@ body.nav-open {
 
   .site-nav {
     gap: 0.65rem;
+  }
+
+  body > header.is-rail {
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+    left: auto;
+    transform: none;
+    padding: 0.55rem;
+    border-radius: 16px;
+    width: auto;
+  }
+
+  body > header.is-rail .site-nav {
+    flex-direction: row;
+    gap: 0.45rem;
+  }
+
+  body > header.is-rail .menu-logo,
+  body > header.is-rail .lang-switch {
+    display: none;
+  }
+
+  body > header.is-rail .nav-toggle {
+    display: flex;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: rgba(28, 24, 20, 0.92);
+  }
+
+  body > header.is-rail .nav-panel {
+    position: fixed;
+    top: auto;
+    bottom: calc(1rem + 58px);
+    right: 1rem;
+    left: auto;
+    width: min(18rem, calc(100vw - 2rem));
+    border: 1px solid rgba(196, 165, 116, 0.22);
+    border-radius: 16px;
+    border-bottom: 1px solid rgba(196, 165, 116, 0.22);
+    background: rgba(18, 16, 14, 0.94);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+    max-height: min(70vh, 28rem);
+  }
+
+  body > header.is-rail .nav-panel.is-open {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body > header,
+  .site-nav,
+  .logo-mark,
+  body > header a,
+  .skills-replay__icon {
+    transition: none !important;
   }
 }
