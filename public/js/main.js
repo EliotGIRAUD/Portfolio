@@ -158,10 +158,16 @@
           ? window.PortfolioI18n.t('marquee.enlarge')
           : 'Agrandir';
         Array.prototype.forEach.call(track.querySelectorAll('.marquee__item'), function (item) {
+          if (item.getAttribute('aria-hidden') === 'true') {
+            item.removeAttribute('role');
+            item.removeAttribute('tabindex');
+            item.removeAttribute('aria-label');
+            return;
+          }
           item.setAttribute('role', 'button');
           item.setAttribute('tabindex', '0');
           var label = (item.querySelector('figcaption') || {}).textContent || '';
-          item.setAttribute('aria-label', enlarge + ' : ' + label.trim());
+          item.setAttribute('aria-label', enlarge + ' · ' + label.trim());
         });
       }
 

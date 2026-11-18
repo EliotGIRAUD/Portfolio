@@ -107,7 +107,6 @@
       'link.github': 'Code sur GitHub',
       'thumb.safact': 'Application SAFACT (nouvel onglet)',
       'thumb.bass': 'Site BassOrder (nouvel onglet)',
-      'thumb.smeggRepo': 'Dépôt SMEGG sur GitHub',
       'thumb.smeggMusic': 'SMEGG, partage musical',
       'thumb.grosmino': "Dépôt Grosmino's",
       'thumb.gaudi': 'Démo Musée Gaudi',
@@ -116,7 +115,6 @@
       'thumb.morpion': 'Dépôt Morpion sur GitHub',
       'alt.safact': "Aperçu de l'application métier SAFACT",
       'alt.bass': 'Aperçu BassOrder, app de tri musical',
-      'alt.smeggFeed': "SMEGG, fil d'actualité (accueil)",
       'alt.smeggMusic': 'SMEGG, intégration musique (Spotify, Deezer, etc.)',
       'alt.grosmino': "Aperçu Grosmino's, app de commande de repas",
       'alt.gaudi': 'Aperçu du site musée Gaudi',
@@ -156,7 +154,6 @@
       'cap.safact.files': 'SAFACT · Dossiers',
       'cap.safact.lib': 'SAFACT · Bibliothèque',
       'cap.safact.reports': 'SAFACT · Rapports',
-      'cap.smegg.feed': 'SMEGG · Feed',
       'cap.smegg.music': 'SMEGG · Musique',
       'cap.gaudi': 'Musée Gaudi',
       'contact.title': 'Contact',
@@ -169,19 +166,19 @@
       'footer.credit': 'Site créé par <a href="index.html">Eliot Giraud</a> · © 2026',
       'legal.back': 'Retour à l’accueil',
       'legal.mentions.title': 'Mentions légales',
-      'legal.mentions.docTitle': 'Mentions légales — Eliot Giraud',
+      'legal.mentions.docTitle': 'Mentions légales · Eliot Giraud',
       'legal.mentions.lead':
         'Informations prévues par la loi pour la confiance dans l’économie numérique (LCEN).',
       'legal.mentions.body':
         '<section aria-labelledby="editeur"><h2 id="editeur">Éditeur du site</h2><p>Ce site est un portfolio personnel édité par&nbsp;:<br><strong>Eliot Giraud</strong><br>7 rue de la Paix, 74000 Annecy, France<br>E-mail&nbsp;: <a href="mailto:eliotgiraud.pro@outlook.fr">eliotgiraud.pro@outlook.fr</a></p><p>Le site présente un parcours de formation et d’expérience professionnelle. Il n’est pas un site de commerce électronique.</p></section><section aria-labelledby="publication"><h2 id="publication">Directeur de la publication</h2><p>Eliot Giraud.</p></section><section aria-labelledby="hebergement"><h2 id="hebergement">Hébergement</h2><p>Le site est hébergé via <strong>GitHub Pages</strong> (GitHub, Inc.).<br>Adresse&nbsp;: 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, États-Unis.<br>Site&nbsp;: <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">pages.github.com <span class="visually-hidden">(nouvel onglet)</span></a></p></section><section aria-labelledby="propriete"><h2 id="propriete">Propriété intellectuelle</h2><p>Les textes, la structure et les éléments graphiques produits pour ce portfolio sont la propriété d’Eliot Giraud, sauf mention contraire (logos de tiers, captures de projets). Toute reproduction non autorisée est interdite.</p></section><section aria-labelledby="responsabilite"><h2 id="responsabilite">Responsabilité</h2><p>Les liens vers des sites tiers (GitHub, LinkedIn, YouTube, kanam.io, probante.fr, etc.) ouvrent des pages indépendantes. L’éditeur n’est pas responsable de leur contenu ni de leurs pratiques.</p></section>',
       'legal.privacy.title': 'Politique de confidentialité',
-      'legal.privacy.docTitle': 'Confidentialité — Eliot Giraud',
+      'legal.privacy.docTitle': 'Confidentialité · Eliot Giraud',
       'legal.privacy.lead':
         'Dernière mise à jour&nbsp;: 18 novembre 2026. Ce site respecte le RGPD et la loi «&nbsp;Informatique et Libertés&nbsp;».',
       'legal.privacy.body':
         '<section aria-labelledby="responsable"><h2 id="responsable">Responsable du traitement</h2><p>Eliot Giraud<br>7 rue de la Paix, 74000 Annecy<br><a href="mailto:eliotgiraud.pro@outlook.fr">eliotgiraud.pro@outlook.fr</a></p></section><section aria-labelledby="donnees"><h2 id="donnees">Données collectées</h2><p><strong>Aucune donnée personnelle n’est collectée via un formulaire sur ce site.</strong></p><ul><li>Pas de compte utilisateur, pas de newsletter, pas d’outil d’analyse (type Google Analytics).</li><li>Pas de cookies publicitaires ou de traceurs de mesure d’audience.</li><li>Si vous écrivez à l’adresse e-mail indiquée, le traitement se limite à la réponse à votre message (intérêt légitime / mesures précontractuelles).</li></ul></section><section aria-labelledby="stockage"><h2 id="stockage">Stockage local du navigateur</h2><p>Une préférence technique est enregistrée en <code>sessionStorage</code> / <code>localStorage</code> pour la langue. Ces informations restent dans votre navigateur.</p></section><section aria-labelledby="tiers"><h2 id="tiers">Services tiers</h2><p>Le site est hébergé sur GitHub Pages. Les polices, icônes SVG et scripts sont servis depuis ce dépôt. Les liens externes relèvent de leurs éditeurs.</p></section><section aria-labelledby="droits"><h2 id="droits">Vos droits</h2><p>Conformément au RGPD, vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation, d’opposition et de portabilité. Contact&nbsp;: <a href="mailto:eliotgiraud.pro@outlook.fr">eliotgiraud.pro@outlook.fr</a>. Réclamation possible auprès de la <a href="https://www.cnil.fr/" rel="noopener noreferrer" target="_blank">CNIL</a>.</p></section>',
       'legal.a11y.title': 'Accessibilité',
-      'legal.a11y.docTitle': 'Accessibilité — Eliot Giraud',
+      'legal.a11y.docTitle': 'Accessibilité · Eliot Giraud',
       'legal.a11y.lead':
         'Engagement pour un site utilisable au clavier, avec un lecteur d’écran, et respectueux de <code>prefers-reduced-motion</code>.',
       'legal.a11y.body':
@@ -290,7 +287,6 @@
       'link.github': 'Code on GitHub',
       'thumb.safact': 'SAFACT app (opens in a new tab)',
       'thumb.bass': 'BassOrder website (opens in a new tab)',
-      'thumb.smeggRepo': 'SMEGG repository on GitHub',
       'thumb.smeggMusic': 'SMEGG, music sharing',
       'thumb.grosmino': "Grosmino's repository",
       'thumb.gaudi': 'Gaudi Museum demo',
@@ -299,7 +295,6 @@
       'thumb.morpion': 'Tic-tac-toe repository on GitHub',
       'alt.safact': 'Preview of the SAFACT business app',
       'alt.bass': 'BassOrder preview, music sorting app',
-      'alt.smeggFeed': 'SMEGG news feed (home)',
       'alt.smeggMusic': 'SMEGG music integration (Spotify, Deezer, etc.)',
       'alt.grosmino': "Grosmino's preview, meal ordering app",
       'alt.gaudi': 'Gaudi museum site preview',
@@ -339,7 +334,6 @@
       'cap.safact.files': 'SAFACT · Cases',
       'cap.safact.lib': 'SAFACT · Library',
       'cap.safact.reports': 'SAFACT · Reports',
-      'cap.smegg.feed': 'SMEGG · Feed',
       'cap.smegg.music': 'SMEGG · Music',
       'cap.gaudi': 'Gaudi Museum',
       'contact.title': 'Contact',
@@ -352,19 +346,19 @@
       'footer.credit': 'Site by <a href="index.html">Eliot Giraud</a> · © 2026',
       'legal.back': 'Back to home',
       'legal.mentions.title': 'Legal notice',
-      'legal.mentions.docTitle': 'Legal notice — Eliot Giraud',
+      'legal.mentions.docTitle': 'Legal notice · Eliot Giraud',
       'legal.mentions.lead':
         'Information required by French digital economy law (LCEN).',
       'legal.mentions.body':
         '<section aria-labelledby="editeur"><h2 id="editeur">Publisher</h2><p>This site is a personal portfolio published by&nbsp;:<br><strong>Eliot Giraud</strong><br>7 rue de la Paix, 74000 Annecy, France<br>Email&nbsp;: <a href="mailto:eliotgiraud.pro@outlook.fr">eliotgiraud.pro@outlook.fr</a></p><p>The site presents education and professional experience. It is not an e-commerce site.</p></section><section aria-labelledby="publication"><h2 id="publication">Publication director</h2><p>Eliot Giraud.</p></section><section aria-labelledby="hebergement"><h2 id="hebergement">Hosting</h2><p>Hosted via <strong>GitHub Pages</strong> (GitHub, Inc.).<br>Address&nbsp;: 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, USA.<br>Website&nbsp;: <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">pages.github.com <span class="visually-hidden">(opens in a new tab)</span></a></p></section><section aria-labelledby="propriete"><h2 id="propriete">Intellectual property</h2><p>Texts, structure, and graphics produced for this portfolio belong to Eliot Giraud unless stated otherwise. Unauthorized reproduction is prohibited.</p></section><section aria-labelledby="responsabilite"><h2 id="responsabilite">Liability</h2><p>Links to third-party sites open independent pages. The publisher is not responsible for their content or practices.</p></section>',
       'legal.privacy.title': 'Privacy policy',
-      'legal.privacy.docTitle': 'Privacy — Eliot Giraud',
+      'legal.privacy.docTitle': 'Privacy · Eliot Giraud',
       'legal.privacy.lead':
         'Last update: 18 November 2026. This site complies with the GDPR and French data-protection law.',
       'legal.privacy.body':
         '<section aria-labelledby="responsable"><h2 id="responsable">Data controller</h2><p>Eliot Giraud<br>7 rue de la Paix, 74000 Annecy<br><a href="mailto:eliotgiraud.pro@outlook.fr">eliotgiraud.pro@outlook.fr</a></p></section><section aria-labelledby="donnees"><h2 id="donnees">Collected data</h2><p><strong>No personal data is collected through a form on this site.</strong></p><ul><li>No user accounts, newsletter, or analytics tools (such as Google Analytics).</li><li>No advertising cookies or audience trackers.</li><li>If you email the address shown, processing is limited to answering your message.</li></ul></section><section aria-labelledby="stockage"><h2 id="stockage">Browser local storage</h2><p>Technical preferences are stored in <code>sessionStorage</code> / <code>localStorage</code> for the language preference. They stay in your browser.</p></section><section aria-labelledby="tiers"><h2 id="tiers">Third-party services</h2><p>The site is hosted on GitHub Pages. Fonts, SVG icons, and scripts are served from this repository. External links are governed by their own publishers.</p></section><section aria-labelledby="droits"><h2 id="droits">Your rights</h2><p>Under the GDPR you have rights of access, rectification, erasure, restriction, objection, and portability. Contact: <a href="mailto:eliotgiraud.pro@outlook.fr">eliotgiraud.pro@outlook.fr</a>. You may also file a complaint with the <a href="https://www.cnil.fr/" rel="noopener noreferrer" target="_blank">CNIL</a>.</p></section>',
       'legal.a11y.title': 'Accessibility',
-      'legal.a11y.docTitle': 'Accessibility — Eliot Giraud',
+      'legal.a11y.docTitle': 'Accessibility · Eliot Giraud',
       'legal.a11y.lead':
         'Commitment to a site usable with keyboard and screen readers, respectful of <code>prefers-reduced-motion</code>.',
       'legal.a11y.body':
