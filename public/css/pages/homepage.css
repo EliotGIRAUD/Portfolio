@@ -218,7 +218,7 @@
 
 .social--contact a {
   position: relative;
-  z-index: 0;
+  z-index: 1;
   overflow: hidden;
   color: var(--text-color) !important;
   background: transparent;
@@ -226,6 +226,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
   padding: 12px 14px;
   border-radius: var(--radius-sm);
   transition: color 0.28s ease, border-color 0.28s ease;
@@ -297,17 +300,46 @@
   }
 
   .hero-copy {
-    padding: 1.75rem 1.25rem 4.5rem;
+    padding: 1.75rem 1.25rem 3.5rem;
     max-width: none;
+    width: 100%;
   }
 
   .hero-name {
     max-width: none;
-    font-size: clamp(2.8rem, 12vw, 4rem);
+    font-size: clamp(2.45rem, 12vw, 4rem);
+  }
+
+  .hero-kicker {
+    letter-spacing: 0.14em;
+  }
+
+  .hero-actions {
+    width: 100%;
   }
 
   .hero-scroll {
     display: none;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .hero-copy {
+    padding: 1.35rem 1rem 3rem;
+  }
+
+  .hero-media {
+    min-height: min(46vh, 340px);
+    height: min(46vh, 340px);
+  }
+
+  .hero-cta {
+    flex: 1 1 calc(50% - 0.75rem);
+    text-align: center;
+  }
+
+  .social--hero {
+    margin-left: 0;
   }
 }
 /******************************** Description ***********************************/
@@ -326,6 +358,7 @@
   justify-content: center;
   flex-direction: column;
   padding-block: var(--space-section);
+  overflow-x: clip;
 }
 
 .about {
@@ -336,9 +369,10 @@
 
 .about-row {
   display: grid;
-  grid-template-columns: minmax(220px, 0.9fr) minmax(260px, 1.1fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(1.5rem, 4vw, 3.5rem);
   align-items: center;
+  min-width: 0;
 }
 
 .about-row--reverse .about-copy {
@@ -407,6 +441,15 @@
 
   .about-photo {
     width: min(100%, 320px);
+    margin-inline: auto;
+  }
+
+  .about-photo::before {
+    inset: 0.65rem 0.2rem -0.55rem 0.65rem;
+  }
+
+  .about-copy p {
+    max-width: none;
   }
 }
 
@@ -417,8 +460,9 @@
 /******************************** Expériences ***********************************/
 
 #experience {
-  padding: var(--space-section) var(--space-2);
+  padding-block: var(--space-section);
   scroll-margin-top: 80px;
+  overflow-x: clip;
 }
 
 #experience .wrapper {
@@ -429,10 +473,11 @@
   flex-direction: column;
   display: flex;
   width: 100%;
+  min-width: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
   position: relative;
-  padding: var(--space-3);
+  padding: var(--space-3) var(--space-2);
 }
 
 #experience .wrapper::before {
@@ -453,9 +498,10 @@
 
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-3);
   width: 100%;
+  min-width: 0;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -566,25 +612,27 @@
 /******************************** Info ***********************************/
 
 #competences {
-  padding: var(--space-section) var(--space-2);
+  padding-block: var(--space-section);
   transition: 0.5s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin-top: 0;
+  overflow-x: clip;
 }
 
 
 #competences .wrapper {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-direction: column;
   display: flex;
   width: 100%;
-  border-radius: 10PX;
+  min-width: 0;
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -637,9 +685,11 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--space-3);
   padding: 0;
+  width: 100%;
+  min-width: 0;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -885,7 +935,8 @@
 /*--------------------- Section IA ----------------------*/
 
 #ia {
-  padding: var(--space-section) var(--space-2);
+  padding-block: var(--space-section);
+  overflow-x: clip;
 }
 
 .ia-panel {
@@ -988,16 +1039,18 @@
   align-items: center;
   justify-content: center;
   padding-block: var(--space-section);
+  overflow-x: clip;
 }
 
 #project .wrapper {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-direction: column;
   display: flex;
-  width : 100%;
+  width: 100%;
+  min-width: 0;
 }
 
 #project .wrapper::before {  
@@ -1023,9 +1076,9 @@
 
 
 .marquee {
-  width: 100vw;
-  max-width: 100vw;
-  margin: 0 calc(50% - 50vw) var(--space-5);
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 var(--space-5);
   border-block: 1px solid var(--accent-border);
   background: rgba(18, 16, 14, 0.92);
   user-select: none;
@@ -1088,6 +1141,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  overflow-wrap: normal;
 }
 
 .marquee__item:focus-visible {
@@ -1410,9 +1464,10 @@ body.lightbox-open {
 
 .section-shell {
   width: 100%;
-  max-width: 1100px;
+  max-width: min(1100px, 100%);
   margin-inline: auto;
-  padding-inline: var(--space-2);
+  padding-inline: clamp(1rem, 4vw, 1.5rem);
+  min-width: 0;
 }
 
 .section-intro,
@@ -1446,21 +1501,25 @@ body.lightbox-open {
 
 /*--------------------- Section Contact----------------------*/
 #contact {
-  padding: var(--space-section) var(--space-2);
+  padding-block: var(--space-section);
   transition: 0.5s ease-in-out;
   min-height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: clip;
 }
 
 #contact .wrapper {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-direction: column;
   display: flex;
+  width: 100%;
+  min-width: 0;
+  margin-top: 0;
 }
 
 #contact .wrapper::before {  
@@ -1485,29 +1544,35 @@ body.lightbox-open {
 }
 
 #contact .container-grid {
-  padding: 150px;
+  padding: 0;
   display: grid;
   grid-template-rows: auto;
   align-content: center;
-
+  width: 100%;
+  min-width: 0;
 }
 
 #contact .container-content {
-  padding: 0 50px;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 1em;
   flex-direction: column;
-
+  width: 100%;
+  min-width: 0;
 }
 
 #contact .container-content h2,
 #contact .container-content h1 {
   color: var(--main-color);
-  font-size: clamp(1.5em, 4vw, 3em);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
   font-weight: 700;
   line-height: 1.1;
+  text-align: left;
+  margin: 0;
+  flex: 0 0 auto;
+  max-width: 100%;
 }
 
 #contact .container-content p {
@@ -1610,7 +1675,8 @@ form button:hover {
   display: flex;
   gap: 0.5em;
   color: var(--main-color);
-  margin-top: 30px;
+  margin-top: var(--space-2);
+  min-width: 0;
 }
 
 #contact .mail {
@@ -1618,6 +1684,13 @@ form button:hover {
   gap: 0.5em;
   color: var(--main-color);
   margin-top: 10px;
+  min-width: 0;
+}
+
+#contact .mail p,
+#contact .mail a {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 #contact .home {
@@ -1629,8 +1702,10 @@ form button:hover {
 
 #contact .social {
   display: flex;
-  gap: 3rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   align-items: center;
+  flex: 0 0 auto;
 }
 
 #contact .tel {
@@ -1640,11 +1715,14 @@ form button:hover {
   margin-top: 10px;
 }
 
-#contact .container-contact{
+#contact .container-contact {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  width: -webkit-fill-available;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0.85rem 1.25rem;
+  width: 100%;
+  min-width: 0;
 }
 
 #contact .container-contact i {
@@ -1654,24 +1732,82 @@ form button:hover {
 @media screen and (max-width: 1000px) {
   #contact .container-grid {
     grid-template-columns: 1fr;
-    gap: 53px;
-    bottom: -100px;
+    gap: 0;
   }
 
   #contact .social {
     margin-left: 0;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   #contact .wrapper {
-    margin-top: 130px;
-    padding: 0;
+    margin-top: 0;
   }
 
   #contact .container-grid .container-content {
     border-bottom: 1px solid var(--accent-border);
-    padding: 50px 50px;
+    padding: 0 0 var(--space-4);
     border-right: 0;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .skills-grid,
+  .experience-grid,
+  #project .box-grid,
+  #project .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #contact .container-contact {
+    align-items: flex-start;
+  }
+
+  .experience-card,
+  .skill-group {
+    padding: 1.15rem 1rem;
+  }
+
+  .experience-card__org {
+    font-size: clamp(1.3rem, 6vw, 1.6rem);
+  }
+
+  #project .project-card .container-content {
+    padding: 1.15rem 1rem;
+    gap: 0.85rem;
+  }
+
+  #project .project-card__title {
+    font-size: 1.15rem;
+  }
+
+  .ia-panel {
+    padding: 1.25rem 1rem;
+  }
+
+  .ia-lead {
+    font-size: 1rem;
+  }
+
+  .skills-intro,
+  .section-intro {
+    font-size: 0.98rem;
+    padding-inline: 0;
+  }
+
+  .marquee__item {
+    width: min(68vw, 210px);
+  }
+
+  .lightbox {
+    padding: 0.75rem;
+  }
+
+  .lightbox__close {
+    top: 0.65rem;
+    right: 0.65rem;
   }
 }
 

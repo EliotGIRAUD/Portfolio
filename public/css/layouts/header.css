@@ -164,6 +164,8 @@ body > header .menu-links ul li a:hover::after {
   padding: var(--space-2);
   background: var(--surface-900);
   border-bottom: 1px solid rgba(196, 165, 116, 0.16);
+  max-height: calc(100dvh - 4.5rem);
+  overflow-y: auto;
 }
 
 .nav-panel.is-open {
@@ -213,7 +215,7 @@ body.nav-open {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1120px) {
   body > header .menu-links {
     display: none;
   }
@@ -224,5 +226,9 @@ body.nav-open {
 
   body > header {
     padding: 10px 16px;
+  }
+
+  .site-nav {
+    gap: 0.65rem;
   }
 }

@@ -53,8 +53,9 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
   scroll-behavior: smooth;
+  max-width: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -123,9 +124,28 @@ body {
     radial-gradient(ellipse 60% 40% at 90% 20%, rgba(196, 165, 116, 0.05), transparent 50%),
     linear-gradient(180deg, #161310 0%, var(--background-color) 35%, #0e0c0a 100%);
   background-attachment: fixed;
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
   color: var(--text-color);
   line-height: 1.65;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+p,
+li,
+figcaption,
+a {
+  overflow-wrap: break-word;
 }
 
 a:focus-visible,
