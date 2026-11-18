@@ -1,16 +1,23 @@
 (function () {
   'use strict';
 
-  var GRAVITY = 1850;
-  var RESTITUTION = 0.42;
-  var FRICTION = 0.88;
-  var AIR_DRAG = 0.995;
-  var SLEEP_SPEED = 12;
-  var SCROLL_IMPULSE = 0.55;
+  var GRAVITY = 1650;
+  var RESTITUTION = 0.55;
+  var FRICTION = 0.86;
+  var AIR_DRAG = 0.997;
+  var SLEEP_SPEED = 18;
+  var SCROLL_LIFT = 4.2;
+  var SCROLL_SIDE = 1.15;
+  var WHEEL_LIFT = 9.5;
   var MAX_DT = 1 / 30;
+  var MAX_SPEED = 1400;
 
   function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
   }
 
   function createWorld(group) {
@@ -70,9 +77,9 @@
     world.bodies.forEach(function (body, i) {
       var maxX = Math.max(0, world.width - body.w);
       body.x = Math.random() * maxX;
-      body.y = -body.h - 12 - i * (body.h + 10);
-      body.vx = (Math.random() - 0.5) * 80;
-      body.vy = Math.random() * 40;
+      body.y = -body.h - 18 - i * (body.h + 14);
+      body.vx = (Math.random() - 0.5) * 120;
+      body.vy = Math.random() * 60;
       body.sleeping = false;
       renderBody(body);
     });
@@ -83,34 +90,26 @@
   }
 
   function collideWalls(body, world) {
-    var bounced = false;
-
     if (body.x < 0) {
       body.x = 0;
       body.vx = Math.abs(body.vx) * RESTITUTION;
-      bounced = true;
     } else if (body.x + body.w > world.width) {
       body.x = world.width - body.w;
       body.vx = -Math.abs(body.vx) * RESTITUTION;
-      bounced = true;
     }
 
     if (body.y < 0) {
       body.y = 0;
       body.vy = Math.abs(body.vy) * RESTITUTION;
-      bounced = true;
     } else if (body.y + body.h > world.height) {
       body.y = world.height - body.h;
       body.vy = -Math.abs(body.vy) * RESTITUTION;
       body.vx *= FRICTION;
-      bounced = true;
       if (Math.abs(body.vy) < SLEEP_SPEED && Math.abs(body.vx) < SLEEP_SPEED) {
         body.vy = 0;
-        body.vx *= 0.7;
+        body.vx *= 0.65;
       }
     }
-
-    return bounced;
   }
 
   function collideBodies(a, b) {
@@ -125,7 +124,7 @@
     var overlapY = Math.min(ay2 - b.y, by2 - a.y);
 
     if (overlapX < overlapY) {
-      var pushX = overlapX / 2;
+      var pushX = overlapX / 2 + 0.1;
       if (a.x < b.x) {
         a.x -= pushX;
         b.x += pushX;
@@ -134,10 +133,11 @@
         b.x -= pushX;
       }
       var vxA = a.vx;
-      a.vx = b.vx * RESTITUTION;
-      b.vx = vxA * RESTITUTION;
+      var vxB = b.vx;
+      a.vx = vxB * RESTITUTION + (Math.random() - 0.5) * 20;
+      b.vx = vxA * RESTITUTION + (Math.random() - 0.5) * 20;
     } else {
-      var pushY = overlapY / 2;
+      var pushY = overlapY / 2 + 0.1;
       if (a.y < b.y) {
         a.y -= pushY;
         b.y += pushY;
@@ -146,7 +146,8 @@
         b.y -= pushY;
       }
       var vyA = a.vy;
-      a.vy = b.vy * RESTITUTION;
+      var vyB = b.vy;
+      a.vy = vyB * RESTITUTION;
       b.vy = vyA * RESTITUTION;
     }
 
@@ -165,6 +166,8 @@
         body.vy += GRAVITY * dt;
         body.vx *= AIR_DRAG;
         body.vy *= AIR_DRAG;
+        body.vx = clamp(body.vx, -MAX_SPEED, MAX_SPEED);
+        body.vy = clamp(body.vy, -MAX_SPEED, MAX_SPEED);
         body.x += body.vx * dt;
         body.y += body.vy * dt;
       }
@@ -181,10 +184,7 @@
       collideWalls(bodies[i], world);
       var b = bodies[i];
       var speed = Math.hypot(b.vx, b.vy);
-      if (
-        speed < SLEEP_SPEED &&
-        b.y + b.h >= world.height - 1.5
-      ) {
+      if (speed < SLEEP_SPEED && b.y + b.h >= world.height - 1.5) {
         b.sleeping = true;
         b.vx = 0;
         b.vy = 0;
@@ -194,17 +194,19 @@
     }
   }
 
-  function applyScrollImpulse(worlds, deltaY) {
-    if (!deltaY) return;
-    var impulseY = Math.max(-420, Math.min(420, deltaY * SCROLL_IMPULSE));
-    var impulseX = impulseY * 0.22;
+  function wakeAndLift(worlds, lift, sideBias) {
+    if (!lift) return;
 
     worlds.forEach(function (world) {
       if (!world.active) return;
       world.bodies.forEach(function (body, index) {
+        var jitter = 0.75 + (index % 5) * 0.08 + Math.random() * 0.2;
         body.sleeping = false;
-        body.vy += impulseY * (0.7 + (index % 3) * 0.12);
-        body.vx += impulseX * ((index % 2 === 0 ? 1 : -1) + (Math.random() - 0.5) * 0.4);
+        // Remonte contre la gravité (y diminue)
+        body.vy -= lift * jitter;
+        body.vx += sideBias * ((index % 2 === 0 ? 1 : -1) * 0.85 + (Math.random() - 0.5)) * SCROLL_SIDE;
+        body.vx = clamp(body.vx, -MAX_SPEED, MAX_SPEED);
+        body.vy = clamp(body.vy, -MAX_SPEED, MAX_SPEED);
       });
     });
   }
@@ -229,15 +231,21 @@
     var lastScrollY = window.scrollY || window.pageYOffset;
     var scrollQueued = false;
 
+    function ensureRunning() {
+      if (!running) {
+        running = true;
+        lastTs = 0;
+        rafId = window.requestAnimationFrame(tick);
+      }
+    }
+
     function setActive(active) {
       worlds.forEach(function (world) {
         world.active = active;
       });
-      if (active && !running) {
-        running = true;
-        lastTs = 0;
-        rafId = window.requestAnimationFrame(tick);
-      } else if (!active && running) {
+      if (active) {
+        ensureRunning();
+      } else if (running) {
         running = false;
         window.cancelAnimationFrame(rafId);
       }
@@ -256,13 +264,29 @@
       rafId = window.requestAnimationFrame(tick);
     }
 
+    function replay() {
+      worlds.forEach(function (world) {
+        world.active = true;
+        spawnWorld(world);
+      });
+      ensureRunning();
+    }
+
+    var replayBtn = section.querySelector('[data-skills-replay]');
+    if (replayBtn) {
+      replayBtn.hidden = false;
+      replayBtn.addEventListener('click', function () {
+        replay();
+      });
+    }
+
     var sectionObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           setActive(entry.isIntersecting);
         });
       },
-      { rootMargin: '12% 0px', threshold: 0.05 }
+      { rootMargin: '16% 0px', threshold: 0.04 }
     );
     sectionObserver.observe(section);
 
@@ -274,9 +298,22 @@
         var y = window.scrollY || window.pageYOffset;
         var delta = y - lastScrollY;
         lastScrollY = y;
-        if (Math.abs(delta) < 1) return;
-        applyScrollImpulse(worlds, delta);
+        if (Math.abs(delta) < 0.5) return;
+
+        // Toute vitesse de scroll soulève les tags ; le sens influence le côté
+        var lift = Math.min(780, Math.abs(delta) * SCROLL_LIFT);
+        var side = delta > 0 ? 1 : -1;
+        wakeAndLift(worlds, lift, side * Math.min(220, Math.abs(delta) * 2.4));
       });
+    }
+
+    function onWheel(event) {
+      var rect = section.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+      var lift = Math.min(920, Math.abs(event.deltaY) * WHEEL_LIFT);
+      var side = event.deltaY > 0 ? 1 : -1;
+      wakeAndLift(worlds, lift, side * Math.min(260, Math.abs(event.deltaY) * 1.8));
     }
 
     var resizeTimer = 0;
@@ -293,10 +330,14 @@
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('wheel', onWheel, { passive: true });
     window.addEventListener('resize', onResize);
+
+    window.PortfolioSkillsPhysics.replay = replay;
   }
 
   window.PortfolioSkillsPhysics = {
-    setup: setupSkillsPhysics
+    setup: setupSkillsPhysics,
+    replay: function () {}
   };
 })();
