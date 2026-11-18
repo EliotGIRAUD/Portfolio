@@ -1520,8 +1520,8 @@ body.lightbox-open {
   background-size: 100% 1px;
 }
 
-.project-grid:not(.is-expanded) [data-project-extra] {
-  display: none;
+#project .project-grid:not(.is-expanded) > [data-project-extra] {
+  display: none !important;
 }
 
 .projects-toggle-wrap {
