@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /mentions-legales.html
+Disallow: /confidentialite.html
+Disallow: /accessibilite.html
+
+Sitemap: https://eliotgiraud.github.io/Portfolio/sitemap.xml
